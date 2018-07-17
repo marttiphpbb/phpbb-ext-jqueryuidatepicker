@@ -1,0 +1,33 @@
+{%- extends '@marttiphpbb_jqueryuidatepicker/base.html' -%}
+
+{%- block title -%}{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_CONFIG') -}}{%- endblock -%}
+
+{%- block explain -%}
+	<p>
+		{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_CONFIG_EXPLAIN') -}}
+	</p>
+{%- endblock -%}
+
+{%- block form_content -%}
+	<fieldset>
+		{%- embed '@marttiphpbb_jqueryuidatepicker/include/theme_select.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_TRY_THEME') -}}
+			{%- endblock label -%}
+			{%- block explain -%}
+				<br>{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_TRY_THEME_EXPLAIN') -}}
+			{%- endblock explain -%}
+		{%- endembed -%}
+
+		<textarea name="config" id="config"{{- marttiphpbb_jqueryuidatepicker.data_attr ?? '' -}}>
+			{{- CONFIG -}}
+		</textarea>
+	</fieldset>
+
+	{%- embed '@marttiphpbb_jqueryuidatepicker/include/submit_buttons.html' -%}
+		{%- block extra_buttons -%}
+			&nbsp;<input class="button2" type="button" id="restore" name="restore" value="{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_RESTORE_DEFAULTS') -}}">
+		{%- endblock extra_buttons -%}
+	{%- endembed -%}
+
+{%- endblock form_content -%}

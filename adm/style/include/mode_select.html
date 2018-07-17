@@ -1,0 +1,13 @@
+{%- set overwrite_explain -%}
+    {%- block explain -%}{%- endblock -%}
+{%- endset -%}
+
+{%- embed '@marttiphpbb_jqueryuidatepicker/include/select.html' with {
+    'options': marttiphpbb_jqueryuidatepicker.modes,
+    'selected': marttiphpbb_jqueryuidatepicker.mode,
+}
+-%}
+    {%- block name -%}mode{%- endblock -%}
+    {%- block label -%}{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_MODE') -}}{%- endblock -%}
+    {%- block explain -%}{{- overwrite_explain -}}{%- endblock -%}
+{%- endembed -%}

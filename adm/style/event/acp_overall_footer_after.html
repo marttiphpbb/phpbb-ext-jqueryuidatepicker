@@ -1,0 +1,4 @@
+{%- if marttiphpbb_jqueryuidatepicker and not definition.INCLUDED_JQUERYUIDATEPICKER -%}
+    {%- DEFINE INCLUDED_JQUERYUIDATEPICKER = true -%}
+    {%- include '@marttiphpbb_jqueryuidatepicker/include/jqueryuidatepicker.html' with {'c': marttiphpbb_jqueryuidatepicker} only -%}
+{%- endif -%}

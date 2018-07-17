@@ -1,0 +1,44 @@
+{
+	"name": "marttiphpbb/jqueryuidatepicker",
+	"type": "phpbb-extension",
+	"description": "JQuery UI Datepicker Extension for phpBB 3.2",
+	"keywords": ["phpbb", "extension", "jquery UI", "Datepicker", "helper ext"],
+	"homepage": "https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker",
+	"version": "0.1.0",
+	"time": "2018-07-16",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "martti",
+			"email": "info@martti.be",
+			"homepage": "https://github.com/marttiphpbb/",
+			"role": "Developer"
+		}],
+	"require": {
+		"php": ">=7",
+		"oomphinc/composer-installers-extender": "^1.1",
+		"bower-asset/jqueryui": "^1"
+	},
+	"require-dev": {
+	},
+	"extra": {
+        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-paths": {
+			"assets/{$name}/": ["type:bower-asset", "type:npm-asset"]
+		},
+		"display-name": "JQuery UI Datepicker (helper ext)",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.1"
+		},
+		"version-check": {
+			"host": "marttiphpbb.github.io",
+			"directory": "/version",
+			"filename": "jqueryuidatepicker.json"
+		}
+	},
+	"repositories":[
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+	]
+}

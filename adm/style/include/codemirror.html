@@ -1,0 +1,26 @@
+{%- for f in c.load.cm_css -%}
+    {%- INCLUDECSS c.cm_path~f~'.css'~c.cm_version_param -%}
+{%- endfor -%}
+
+{%- for f in c.load.cm_js -%}
+    {%- INCLUDEJS c.cm_path~f~'.js'~c.cm_version_param -%}
+{%- endfor -%}
+
+{%- for f in c.load.ext_css -%}
+    {%- INCLUDECSS '@marttiphpbb_jqueryuidatepicker/'~f~'.css' -%}
+{%- endfor -%}
+
+{%- for f in c.load.ext_js -%}
+    {%- INCLUDEJS '@marttiphpbb_jqueryuidatepicker/'~f~'.js' -%}
+{%- endfor -%}
+
+{%- for f in c.load.custom_css -%}
+    {%- INCLUDECSS f -%}
+{%- endfor -%}
+
+{%- for f in c.load.custom_js -%}
+    {%- INCLUDEJS f -%}
+{%- endfor -%}
+
+{%- INCLUDEJS '@marttiphpbb_jqueryuidatepicker/js/marttiphpbb_jqueryuidatepicker.js' -%}
+
