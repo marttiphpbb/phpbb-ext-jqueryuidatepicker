@@ -46,13 +46,14 @@ class main_module
 				}
 
 				$listener->enable();
+				$listener->switch_theme_enable();
 
 				$component_info = file_get_contents(__DIR__ . '/../' . cnst::DIR . 'component.json');
 				$jqueryui_version = json_decode($component_info, true)['version'];
 
 				$template->assign_block_vars('datepicker_themes', [
 					'VALUE'			=> 'none',
-					'NAME'			=> $language->lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_THEME_NONE'),
+					'NAME'			=> $language->lang(cnst::L_ACP . '_THEME_NONE'),
 				]);
 
 				$dir = __DIR__ . '/../' . cnst::THEMES_DIR;
@@ -61,7 +62,7 @@ class main_module
 
 				if ($scanned === false)
 				{
-					trigger_error('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_THEME_LIST_FAIL', E_USER_WARNING);
+					trigger_error(cnst::L_ACP . '_THEME_LIST_FAIL', E_USER_WARNING);
 				}
 
 				$scanned = array_diff($scanned, ['.', '..', '.htaccess']);

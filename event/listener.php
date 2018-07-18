@@ -20,6 +20,7 @@ class listener implements EventSubscriberInterface
 	protected $config;
 	protected $phpbb_root_path;
 	protected $enabled = false;
+	protected $switch_theme_enabled = false;
 
 	public function __construct(
 		string $phpbb_root_path,
@@ -43,6 +44,11 @@ class listener implements EventSubscriberInterface
 		$this->enabled = true;
 	}
 
+	public function switch_theme_enable():void
+	{
+		$this->switch_theme_enabled = true;
+	}
+
 	public function core_twig_environment_render_template_before(event $event):void
 	{
 		if (!$this->enabled)
@@ -51,9 +57,15 @@ class listener implements EventSubscriberInterface
 		}
 
 		$context = $event['context'];
+
+		[$lang] = explode('-', $context['S_USER_LANG']);
+		$lang = $lang === 'en' ? false : $lang;
+
 		$context['marttiphpbb_jqueryuidatepicker'] = [
-			'path' 		=> $this->phpbb_root_path . cnst::EXT_PATH . cnst::DIR,
-			'theme'		=> $this->config[cnst::THEME],
+			'path' 					=> $this->phpbb_root_path . cnst::EXT_PATH . cnst::DIR,
+			'theme'					=> $this->config[cnst::THEME],
+			'lang'					=> $lang,
+			'switch_theme_enabled'	=> $this->switch_theme_enabled,
 		];
 		$event['context'] = $context;
 	}

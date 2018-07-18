@@ -1,0 +1,14 @@
+{%- if marttiphpbb_jqueryuidatepicker and not definition.INCLUDED_JQUERYUI_DATEPICKER -%}
+    {%- DEFINE INCLUDED_JQUERYUI_DATEPICKER = true -%}
+    {%- INCLUDECSS marttiphpbb_jqueryuidatepicker.path ~ 'themes/base/datepicker.css' -%}
+    {%- if marttiphpbb_jqueryuidatepicker.switch_theme_enabled -%}
+        <link href="{{- marttiphpbb_jqueryuidatepicker.path -}}themes/{{- marttiphpbb_jqueryuidatepicker.theme -}}/theme.css?v={{- marttiphpbb_jqueryuidatepicker.version -}}" rel="stylesheet" type="text/css" media="screen" data-marttiphpbb-jqueryuidatepicker="{{- marttiphpbb_jqueryuidatepicker.path -}}themes/">
+    {%- else -%}
+        {%- INCLUDECSS marttiphpbb_jqueryuidatepicker.path ~ 'themes/'~marttiphpbb_jqueryuidatepicker.theme~'/theme.css' -%}
+    {%- endif -%}
+    {%- INCLUDECSS '@marttiphpbb_jqueryuidatepicker/datepicker.css' -%}
+    {%- INCLUDEJS marttiphpbb_jqueryuidatepicker.path ~ 'ui/widgets/datepicker.js' -%}
+    {%- if marttiphpbb_jqueryuidatepicker.lang -%}
+        {%- INCLUDEJS marttiphpbb_jqueryuidatepicker.path ~ 'ui/minified/i18n/datepicker-'~marttiphpbb_jqueryuidatepicker.lang~'.js' -%}
+    {%- endif -%}
+{%- endif -%}
