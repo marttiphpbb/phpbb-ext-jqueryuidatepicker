@@ -1,11 +1,11 @@
 # PhpBB Extension - marttiphpbb JQuery UI Datepicker (helper ext)
 
-[Topic on phpBB.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2473266)
+[Topic on phpBB.com](https://phpbb.com)
 
 ## Requirements
 
 * phpBB 3.2.1+
-* PHP 7+
+* PHP 7.1+
 
 ## Features
 

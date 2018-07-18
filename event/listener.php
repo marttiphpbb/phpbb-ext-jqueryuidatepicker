@@ -10,15 +10,24 @@ namespace marttiphpbb\jqueryuidatepicker\event;
 use phpbb\event\data as event;
 use marttiphpbb\jqueryuidatepicker\service\load;
 use marttiphpbb\jqueryuidatepicker\util\cnst;
+use phpbb\template\twig\twig as template;
+use phpbb\template\twig\loader;
+use phpbb\config\config;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	protected $load;
+	protected $config;
+	protected $phpbb_root_path;
+	protected $enabled = false;
 
-	public function __construct(load $load)
+	public function __construct(
+		string $phpbb_root_path,
+		config $config
+	)
 	{
-		$this->load = $load;
+		$this->phpbb_root_path = $phpbb_root_path;
+		$this->config = $config;
 	}
 
 	static public function getSubscribedEvents()
@@ -29,15 +38,23 @@ class listener implements EventSubscriberInterface
 		];
 	}
 
-	public function core_twig_environment_render_template_before(event $event)
+	public function enable():void
 	{
-		if (!$this->load->is_enabled())
+		$this->enabled = true;
+	}
+
+	public function core_twig_environment_render_template_before(event $event):void
+	{
+		if (!$this->enabled)
 		{
 			return;
 		}
 
 		$context = $event['context'];
-		$context['marttiphpbb_jqueryuidatepicker'] = $this->load->get_listener_data();
+		$context['marttiphpbb_jqueryuidatepicker'] = [
+			'path' 		=> $this->phpbb_root_path . cnst::EXT_PATH . cnst::DIR,
+			'theme'		=> $this->config[cnst::THEME],
+		];
 		$event['context'] = $context;
 	}
 }

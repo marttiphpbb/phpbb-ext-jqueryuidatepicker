@@ -23,4 +23,5 @@ class cnst
 	const UI_DIR = self::DIR . 'ui/';
 	const I18N_DIR = self::UI_DIR . 'i18n/';
 	const WIDGETS_DIR = self::UI_DIR . 'widgets/';
+	const PATH = self::TPL . '../../../../../../' . self::DIR;
 }

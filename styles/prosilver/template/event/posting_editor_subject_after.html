@@ -1,0 +1,37 @@
+{%- if S_CALENDARINPUT_INPUT is defined -%}
+<div class="calendarinput-input" 
+data-min-duration="{{- CALENDARINPUT_MIN_DURATION_DAYS -}}" data-max-duration="{{- CALENDARINPUT_MAX_DURATION_DAYS -}}"
+data-lower-limit="{{- CALENDARINPUT_LOWER_LIMIT_DAYS -}}" data-upper-limit="{{- CALENDARINPUT_UPPER_LIMIT_DAYS -}}"
+data-required="{{- S_CALENDARINPUT_REQUIRED -}}"
+data-date-format="{{- CALENDARINPUT_DATE_FORMAT -}}">
+
+<dl>
+	<dt>
+		<label for="calendarinput_date_start">{{- lang('CALENDARINPUT_EVENT_DATE') -}}{{- lang('COLON') -}}</label>
+	</dt>
+	<dd>
+		{%- include '@marttiphpbb_calendarinput/include/date_input.html' with {'name': 'calendarinput_date_start', 'value': CALENDARINPUT_DATE_START, 'placeholder': CALENDARINPUT_PLACEHOLDER, 'required': S_CALENDARINPUT_REQUIRED} only -%}
+		{%- if S_CALENDARINPUT_TO_INPUT -%}&nbsp;
+			{{- lang('CALENDARINPUT_TO') -}}{{- lang('COLON') -}}&nbsp;
+			{%- include '@marttiphpbb_calendarinput/include/date_input.html' with {'name': 'calendarinput_date_end', 'value': CALENDARINPUT_DATE_END, 'placeholder': CALENDARINPUT_PLACEHOLDER, 'required': S_CALENDARINPUT_REQUIRED} only -%}
+		{%- endif -%}
+	</dd>
+</dl>
+</div>
+
+{%- if CALENDARINPUT_DATEPICKER_THEME -%}
+	{%- INCLUDECSS '@marttiphpbb_calendarinput/jquery-ui/themes/' ~ CALENDARINPUT_DATEPICKER_THEME ~ '/jquery-ui.min.css' -%}
+{%- endif -%}
+
+{%- INCLUDEJS '@marttiphpbb_calendarinput/js/posting_input.js' -%}
+
+{%- if true or S_CALENDARINPUT_JQUERY_UI_DATEPICKER -%}
+	{%- INCLUDEJS '@marttiphpbb_calendarinput/jquery-ui/ui/minified/datepicker.min.js' -%}
+{%- endif -%}
+
+{%- if CALENDARINPUT_USER_LANG_SHORT != 'en' and S_CALENDARINPUT_JQUERY_UI_DATEPICKER_I18N -%}
+	{%- INCLUDEJS '@marttiphpbb_calendarinput/jquery-ui/ui/i18n/datepicker-' ~ CALENDARINPUT_USER_LANG_SHORT ~ '.js' -%}
+{%- endif -%}
+
+{%- endif -%}
+

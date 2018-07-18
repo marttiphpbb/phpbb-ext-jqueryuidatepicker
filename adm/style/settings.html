@@ -41,12 +41,14 @@
 				{{- lang('ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_TRY_THEME_EXPLAIN') -}}
 			</dt>
 			<dd>
-				<input type="text" name="try_theme" id="try_theme" value="">
+				<input type="text" name="try_theme" id="try_theme" value="" data-datepicker>
 			</dd>
 		</dl>
 	</fieldset>
 
 	{%- embed '@marttiphpbb_jqueryuidatepicker/include/submit_buttons.html' -%}
 	{%- endembed -%}
+
+	{%- INCLUDEJS '@marttiphpbb_jqueryuidatepicker/js/try.js' -%}
 
 {%- endblock form_content -%}

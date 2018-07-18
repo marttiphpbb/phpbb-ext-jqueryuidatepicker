@@ -21,6 +21,7 @@ class main_module
 		$template = $phpbb_container->get('template');
 		$language = $phpbb_container->get('language');
 		$config = $phpbb_container->get('config');
+		$listener = $phpbb_container->get('marttiphpbb.jqueryuidatepicker.listener');
 
 		$language->add_lang('acp', cnst::FOLDER);
 		add_form_key(cnst::FOLDER);
@@ -43,6 +44,8 @@ class main_module
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
+
+				$listener->enable();
 
 				$component_info = file_get_contents(__DIR__ . '/../' . cnst::DIR . 'component.json');
 				$jqueryui_version = json_decode($component_info, true)['version'];

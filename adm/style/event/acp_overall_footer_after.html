@@ -1,4 +1,5 @@
-{%- if marttiphpbb_jqueryuidatepicker and not definition.INCLUDED_JQUERYUIDATEPICKER -%}
-    {%- DEFINE INCLUDED_JQUERYUIDATEPICKER = true -%}
-    {%- include '@marttiphpbb_jqueryuidatepicker/include/jqueryuidatepicker.html' with {'c': marttiphpbb_jqueryuidatepicker} only -%}
+{%- if marttiphpbb_jqueryuidatepicker and not definition.INCLUDED_JQUERYUI_DATEPICKER -%}
+    {%- DEFINE INCLUDED_JQUERYUI_DATEPICKER = true -%}
+    {%- INCLUDECSS marttiphpbb_jqueryuidatepicker.path ~ 'themes/'~marttiphpbb_jqueryuidatepicker.theme~'/theme.css' -%}
+    {%- INCLUDEJS marttiphpbb_jqueryuidatepicker.path ~ 'ui/widgets/datepicker.js' -%}
 {%- endif -%}

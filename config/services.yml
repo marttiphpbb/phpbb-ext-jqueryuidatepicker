@@ -1,19 +1,8 @@
 services:
-    marttiphpbb.jqueryuidatepicker.store:
-        class: marttiphpbb\jqueryuidatepicker\service\store
-        arguments:
-            - '@config_text'
-            - '@cache.driver'
-
-    marttiphpbb.jqueryuidatepicker.load:
-        class: marttiphpbb\jqueryuidatepicker\service\load
-        arguments:
-            - '@marttiphpbb.jqueryuidatepicker.store'
-            - '%core.root_path%'
-
     marttiphpbb.jqueryuidatepicker.listener:
         class: marttiphpbb\jqueryuidatepicker\event\listener
         arguments:
-            - '@marttiphpbb.jqueryuidatepicker.load'
+            - '%core.root_path%'
+            - '@config'
         tags:
             - { name: event.listener }

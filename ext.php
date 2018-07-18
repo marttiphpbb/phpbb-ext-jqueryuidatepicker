@@ -13,11 +13,11 @@ use marttiphpbb\jqueryuidatepicker\service\store;
 class ext extends base
 {
 	/**
-	 * phpBB 3.2.1+ and PHP 7+
+	 * phpBB 3.2.1+ and PHP 7.1+
 	 */
 	public function is_enableable()
 	{
 		$config = $this->container->get('config');
-		return phpbb_version_compare($config['version'], '3.2.1', '>=') && version_compare(PHP_VERSION, '7', '>=');
+		return phpbb_version_compare($config['version'], '3.2.1', '>=') && version_compare(PHP_VERSION, '7.1', '>=');
 	}
 }
