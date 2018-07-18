@@ -18,6 +18,6 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 
-	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER'			=> 'JQuery UI Datepicker',
-	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_CONFIG'		=> 'Configuration',
+	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER'			=> 'JQuery UI Datepicker (helper ext)',
+	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_SETTINGS'	=> 'Settings',
 ]);

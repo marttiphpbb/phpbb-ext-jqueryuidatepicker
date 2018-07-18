@@ -15,12 +15,12 @@ class cnst
 	const L = 'MARTTIPHPBB_JQUERYUIDATEPICKER';
 	const L_ACP = 'ACP_' . self::L;
 	const L_MCP = 'MCP_' . self::L;
+	const THEME = self::ID . '_theme';
 	const TPL = '@' . self::ID . '/';
 	const EXT_PATH = 'ext/' . self::FOLDER . '/';
-	const JQUERYUIDATEPICKER_DIR = 'jqueryuidatepicker/';
-	const LIB_DIR = self::JQUERYUIDATEPICKER_DIR . 'lib/';
-	const THEME_DIR = self::JQUERYUIDATEPICKER_DIR . 'theme/';
-	const MODE_DIR = self::JQUERYUIDATEPICKER_DIR . 'mode/';
-	const KEYMAP_DIR = self::JQUERYUIDATEPICKER_DIR . 'keymap/';
-	const ADDON_DIR = self::JQUERYUIDATEPICKER_DIR . 'addon/';
+	const DIR = 'assets/jqueryui/';
+	const THEMES_DIR = self::DIR . 'themes/';
+	const UI_DIR = self::DIR . 'ui/';
+	const I18N_DIR = self::UI_DIR . 'i18n/';
+	const WIDGETS_DIR = self::UI_DIR . 'widgets/';
 }

@@ -16,12 +16,12 @@ class main_info
 		return [
 			'filename'	=> '\marttiphpbb\jqueryuidatepicker\acp\main_module',
 			'title'		=> cnst::L_ACP,
-			'modes'		=> [			
-				'config'	=> [
-					'title'	=> cnst::L_ACP . '_CONFIG',
+			'modes'		=> [
+				'settings'	=> [
+					'title'	=> cnst::L_ACP . '_SETTINGS',
 					'auth'	=> 'ext_marttiphpbb/jqueryuidatepicker && acl_a_board',
 					'cat'	=> [cnst::L_ACP],
-				],						
+				],
 			],
 		];
 	}
