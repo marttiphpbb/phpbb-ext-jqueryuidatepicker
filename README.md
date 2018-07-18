@@ -13,7 +13,9 @@ This phpBB extension provides a basic integration of the [JQuery UI Datepicker](
 
 ## Screenshot ACP
 
-![Settings](doc/acp.png)
+![ACP](doc/acp_1.png)
+
+![ACP](doc/acp_2.png)
 
 ## Quick Install
 
