@@ -9,7 +9,7 @@
 
 ## Features
 
-This phpBB extension provides a basic integration of the [JQuery UI Datepicker](http://jqueryui.com/datepicker/) for use ACP by other extensions.
+This phpBB extension provides loading of the [JQuery UI Datepicker](http://jqueryui.com/datepicker/) for use by other extensions.
 
 ## Screenshot ACP
 
