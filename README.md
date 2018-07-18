@@ -36,7 +36,15 @@ You can install this on the latest release of phpBB 3.2 by following the steps b
 
 ## For extension developers: how to use
 
-To Do
+In your controller:
+
+    $ext_manager = $phpbb_container->get('ext.manager');
+
+    if ($ext_manager->is_enabled('marttiphpbb/jqueryuidatepicker'))
+    {
+        $listener = $phpbb_container->get('marttiphpbb.jqueryuidatepicker.listener');
+        $listener->enable();
+    }
 
 ## License
 
