@@ -17,6 +17,10 @@ This phpBB extension provides loading of the [JQuery UI Datepicker](http://jquer
 
 ![ACP](doc/acp_2.png)
 
+Other theme and translation (Dutch):
+
+![ACP](doc/acp_3.png)
+
 ## Quick Install
 
 You can install this on the latest release of phpBB 3.2 by following the steps below:

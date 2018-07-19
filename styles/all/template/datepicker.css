@@ -1,4 +1,5 @@
-.ui-datepicker
+div.ui-datepicker
 {
     z-index: 999999999 !important;
+    font-size: 10px;
 }
