@@ -5,7 +5,7 @@
 	"keywords": ["phpbb", "extension", "jquery UI", "Datepicker", "helper ext"],
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker",
 	"version": "0.1.1",
-	"time": "2018-07-18",
+	"time": "2018-07-31",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "martti",
