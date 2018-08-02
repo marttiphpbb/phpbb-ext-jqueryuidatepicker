@@ -12,6 +12,7 @@ use marttiphpbb\jqueryuidatepicker\service\load;
 use marttiphpbb\jqueryuidatepicker\util\cnst;
 use phpbb\template\twig\twig as template;
 use phpbb\template\twig\loader;
+use phpbb\event\dispatcher;
 use phpbb\config\config;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -24,11 +25,13 @@ class listener implements EventSubscriberInterface
 
 	public function __construct(
 		string $phpbb_root_path,
-		config $config
+		config $config,
+		dispatcher $dispatcher
 	)
 	{
 		$this->phpbb_root_path = $phpbb_root_path;
 		$this->config = $config;
+		$this->dispatcher = $dispatcher;
 	}
 
 	static public function getSubscribedEvents()
@@ -67,6 +70,15 @@ class listener implements EventSubscriberInterface
 			'lang'					=> $lang,
 			'switch_theme_enabled'	=> $this->switch_theme_enabled,
 		];
+
+		/**
+		 * Do extra stuff when the datepicker loads
+		 * @event
+		 * @var	array context
+		 */
+		$vars = ['context'];
+		extract($this->dispatcher->trigger_event('marttiphpbb.jqueryuidatepicker', compact($vars)));
+
 		$event['context'] = $context;
 	}
 }

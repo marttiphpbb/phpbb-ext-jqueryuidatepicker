@@ -4,5 +4,6 @@ services:
         arguments:
             - '%core.root_path%'
             - '@config'
+            - '@dispatcher'
         tags:
             - { name: event.listener }
