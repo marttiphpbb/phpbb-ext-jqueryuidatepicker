@@ -8,10 +8,7 @@
 namespace marttiphpbb\jqueryuidatepicker\event;
 
 use phpbb\event\data as event;
-use marttiphpbb\jqueryuidatepicker\service\load;
 use marttiphpbb\jqueryuidatepicker\util\cnst;
-use phpbb\template\twig\twig as template;
-use phpbb\template\twig\loader;
 use phpbb\event\dispatcher;
 use phpbb\config\config;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
