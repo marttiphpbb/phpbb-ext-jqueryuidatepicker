@@ -4,8 +4,8 @@
 	"description": "JQuery UI Datepicker Extension for phpBB 3.2",
 	"keywords": ["phpbb", "extension", "jquery UI", "Datepicker", "helper ext"],
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-jqueryuidatepicker",
-	"version": "0.1.1",
-	"time": "2018-07-31",
+	"version": "0.2.0",
+	"time": "2018-09-11",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "martti",

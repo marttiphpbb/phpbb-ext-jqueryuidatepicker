@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e3ccf56d93fac9fb1ed30fba7cd1c2e",
+    "content-hash": "6b35501e29438d80da00d0ab62bbdd0a",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -217,7 +217,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }
