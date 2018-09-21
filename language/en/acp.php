@@ -22,7 +22,7 @@ $lang = array_merge($lang, [
 		=> 'This extension provides a basic integration of JQuery UI Datepicker for use
 			by other extensions.',
 	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_VERSION'
-		=> '<a href="https://jqueryui.com">JQuery UI</a> version: %s',
+		=> '%1$sJQuery UI%2$s version: %3$s',
 	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_THEME'
 		=> 'Datepicker theme',
 	'ACP_MARTTIPHPBB_JQUERYUIDATEPICKER_TRY_THEME'
